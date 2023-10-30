@@ -1,7 +1,6 @@
 [
-  "HTML",
-  "CSS",
-  "responsive design",
-  "JavaScript",
-  "PHP"
+  {
+    "task": "fare la spesa",
+    "barrato": true
+  }
 ]
