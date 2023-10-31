@@ -1,6 +1,1 @@
-[
-  {
-    "task": "fare la spesa",
-    "barrato": true
-  }
-]
+[{"task":"fare la spesa","barred":true}]
