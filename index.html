@@ -32,10 +32,9 @@
 
       <div class="bg-white text-dark rounded-1 p-3 my-3 ">
         <ul class="list-group">
-          <li v-for="(item,index) in listTask" class="list-group-item d-flex justify-content-between">{{ item.task }}
-            <button @click="removeTask(index)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+          <li v-for="(item,index) in listTask" :key="index" class="list-group-item d-flex justify-content-between" :class="{'text-decoration-line-through': item.barred }" @click.stop="toggleBarredTask(index)"> {{ item.task }}
+            <button @click.stop="removeTask(index)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
           </li>
-          
         </ul>
 
         <div class="input-group my-3">

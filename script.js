@@ -28,13 +28,25 @@ createApp({
           this.newTask='';
         })
     },
-    removeTask(index){
+    toggleBarredTask(index){
       const dataForm = new FormData();
-      dataForm.append('removeTask',index);
+      dataForm.append('toggleTask',index);
       axios.post(this.apiUrl, dataForm)
         .then(result => {
           this.listTask= result.data;
         })
+    },
+    removeTask(index){
+      if(this.listTask[index].barred){
+        
+        const dataForm = new FormData();
+        dataForm.append('removeTask',index);
+        axios.post(this.apiUrl, dataForm)
+          .then(result => {
+          this.listTask= result.data;
+        })
+      }
+      
     }
   },
       

@@ -22,10 +22,12 @@ if(isset($_POST['newTaskItem']) && isset($_POST['done'])){
 //controllo se la mia 
 if(isset($_POST['removeTask'])){
   $indexRemoveTask = $_POST['removeTask'];
-  if($indexRemoveTask){
     array_splice($listTask,$indexRemoveTask,1);
-  } 
-  
+} 
+
+if(isset($_POST['toggleTask'])){
+  $indexToogleTask = $_POST['toggleTask'];
+  $listTask[$indexToogleTask]["barred"] = !$listTask[$indexToogleTask]["barred"];
 } 
 
 
